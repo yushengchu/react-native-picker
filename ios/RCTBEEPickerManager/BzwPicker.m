@@ -549,7 +549,9 @@
                 
                 NSArray *ary=[dic allKeys];
                 
-                [self.provinceArray addObject:[ary firstObject]];
+                if ([ary firstObject]) {
+                    [self.provinceArray addObject:[ary firstObject]];
+                }
             }
             [self.cityArray addObjectsFromArray:[[self.dataDry objectAtIndex:0] objectForKey:[self.provinceArray objectAtIndex:0]]];
         }
